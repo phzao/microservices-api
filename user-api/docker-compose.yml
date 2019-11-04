@@ -1,0 +1,57 @@
+version: '3.5'
+services:
+#    redis_user:
+#        container_name: redis-serasa
+#        image: sickp/alpine-redis:3.2.2
+#        ports:
+#            - "6379:6379"
+    app:
+        build:
+            context: ./
+            dockerfile: app.dockerfile
+        working_dir: /var/www
+        container_name: user-php
+        volumes:
+          - ./:/var/www
+        environment:
+          - "DB_PORT=3306"
+          - "DB_HOST=database"
+        networks:
+          - db-net
+    web:
+        build:
+            context: ./
+            dockerfile: web.dockerfile
+        working_dir: /var/www
+        container_name: user-web
+        volumes:
+          - app
+        ports:
+          - 8000:8000
+        networks:
+          - db-net
+#    elasticsearch:
+#      image: elasticsearch:6.5.0
+#      container_name: laravel-elasticsearch
+#      ports:
+#        - "9200:9200"
+#      networks:
+#        - db-net
+      # The Database
+#    database:
+#      image: mariadb:10.3
+#      container_name: laravel-database
+#      volumes:
+#        - ./db:/var/lib/mysql
+#      environment:
+#        - "MYSQL_DATABASE=serasa"
+#        - "MYSQL_USER=admin"
+#        - "MYSQL_PASSWORD=123"
+#        - "MYSQL_ROOT_PASSWORD=123"
+#      ports:
+#        - "3306:3306"
+
+networks:
+  db-net:
+    external:
+      name: db_network
