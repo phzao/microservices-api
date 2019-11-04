@@ -1,4 +1,4 @@
-# Teste Serasa
+# Teste
 
 Foi desenvolvida uma API utilizando laravel, redis, microservice, mysql. 
 
@@ -79,4 +79,5 @@ Foi adicionado o Kibana p/ monitorar e analisar os dados do elasticsearch.
 
 ## Postman collections 
 
-O arquivo **Serasa-teste.postman_collection.json** na raiz possui as rotas utilizadas durante o desenvolvimento
+O arquivo **
+-teste.postman_collection.json** na raiz possui as rotas utilizadas durante o desenvolvimento
