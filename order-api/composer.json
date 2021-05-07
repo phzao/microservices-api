@@ -12,7 +12,7 @@
         "babenkoivan/scout-elasticsearch-driver": "^4.0",
         "cviebrock/laravel-elasticsearch": "^4.1",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.8.*",
+        "laravel/framework": "6.18.*",
         "laravel/tinker": "^1.0",
         "predis/predis": "^1.1"
     },
